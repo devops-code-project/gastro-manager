@@ -20,7 +20,7 @@ public class PersonController extends ABaseController<Person, IPersonService> {
         super(service, "Person");
     }
 
-    @GetMapping("persons")
+    @GetMapping("lista")
     public ResponseEntity<ApiResponseDto<List<IPersonDto>>> Persons() {
         try {
             return ResponseEntity.ok(new ApiResponseDto<List<IPersonDto>>("Datos obtenidos", service.Persons(), true));
