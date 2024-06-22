@@ -21,7 +21,7 @@ pipeline {
         }
        stage('Desplegando') {
             steps {
-                sh "sudo CONTAINER_IMAGE=$REPOSITORY_URI_APP docker compose -f ./devops/docker-compose.yml up -d --build && sudo docker image prune -f"
+                sh "CONTAINER_IMAGE=$REPOSITORY_URI_APP docker compose -f ./devops/docker-compose.yml up -d --build && sudo docker image prune -f"
             }
         }
     }
